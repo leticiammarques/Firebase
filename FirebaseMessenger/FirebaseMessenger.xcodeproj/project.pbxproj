@@ -19,6 +19,8 @@
 		9FF4FD6928CB8974009B78B9 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4FD6828CB8974009B78B9 /* RegisterView.swift */; };
 		9FF4FD6B28CB8983009B78B9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4FD6A28CB8983009B78B9 /* LoginView.swift */; };
 		9FF4FD6D28CB8BC0009B78B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF4FD6C28CB8BC0009B78B9 /* GoogleService-Info.plist */; };
+		9FF4FD6F28CBAF61009B78B9 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4FD6E28CBAF61009B78B9 /* ConversationsController.swift */; };
+		9FF4FD7128CBAF73009B78B9 /* ConversationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4FD7028CBAF73009B78B9 /* ConversationsView.swift */; };
 		EC7040E890480A3C9B5CBDC2 /* Pods_FirebaseMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3312027AD18D6C9896801 /* Pods_FirebaseMessenger.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		9FF4FD6828CB8974009B78B9 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9FF4FD6A28CB8983009B78B9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9FF4FD6C28CB8BC0009B78B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FF4FD6E28CBAF61009B78B9 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		9FF4FD7028CBAF73009B78B9 /* ConversationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				9FF4FD6628CB8966009B78B9 /* FirebaseMessengerView.swift */,
 				9FF4FD6828CB8974009B78B9 /* RegisterView.swift */,
 				9FF4FD6A28CB8983009B78B9 /* LoginView.swift */,
+				9FF4FD7028CBAF73009B78B9 /* ConversationsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				9FF4FD4F28CB867D009B78B9 /* FirebaseMessengerController.swift */,
 				9FF4FD6228CB8945009B78B9 /* RegisterController.swift */,
 				9FF4FD6428CB8953009B78B9 /* LoginController.swift */,
+				9FF4FD6E28CBAF61009B78B9 /* ConversationsController.swift */,
 			);
 			path = "\U0010Controller";
 			sourceTree = "<group>";
@@ -252,10 +258,12 @@
 				9FF4FD6328CB8946009B78B9 /* RegisterController.swift in Sources */,
 				9FF4FD5028CB867D009B78B9 /* FirebaseMessengerController.swift in Sources */,
 				9FF4FD4C28CB867D009B78B9 /* AppDelegate.swift in Sources */,
+				9FF4FD7128CBAF73009B78B9 /* ConversationsView.swift in Sources */,
 				9FF4FD6928CB8974009B78B9 /* RegisterView.swift in Sources */,
 				9FF4FD6728CB8966009B78B9 /* FirebaseMessengerView.swift in Sources */,
 				9FF4FD4E28CB867D009B78B9 /* SceneDelegate.swift in Sources */,
 				9FF4FD6B28CB8983009B78B9 /* LoginView.swift in Sources */,
+				9FF4FD6F28CBAF61009B78B9 /* ConversationsController.swift in Sources */,
 				9FF4FD6528CB8953009B78B9 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

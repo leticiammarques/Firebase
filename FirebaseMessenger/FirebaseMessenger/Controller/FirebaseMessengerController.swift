@@ -29,7 +29,6 @@ class FirebaseMessengerController: UIViewController {
     
     @objc private func didTapRegister() {
         let vc = RegisterController()
-        vc.title = "Crie sua conta"
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -37,8 +36,5 @@ class FirebaseMessengerController: UIViewController {
         let vc = LoginController()
         navigationController?.pushViewController(vc, animated: true)
     }
-
-
-
 }
 
