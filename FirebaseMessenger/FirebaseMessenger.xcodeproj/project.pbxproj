@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */; };
+		9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */; };
+		9F7C2D9A28D0B4C700F19628 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */; };
+		9F7C2D9C28D0B4DF00F19628 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9B28D0B4DF00F19628 /* ConversationsViewModel.swift */; };
 		9FF4FD4C28CB867D009B78B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4FD4B28CB867D009B78B9 /* AppDelegate.swift */; };
 		9FF4FD4E28CB867D009B78B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4FD4D28CB867D009B78B9 /* SceneDelegate.swift */; };
 		9FF4FD5028CB867D009B78B9 /* FirebaseMessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4FD4F28CB867D009B78B9 /* FirebaseMessengerController.swift */; };
@@ -28,6 +32,10 @@
 		340363E3A420AA899E9F165B /* Pods-FirebaseMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseMessenger.release.xcconfig"; path = "Target Support Files/Pods-FirebaseMessenger/Pods-FirebaseMessenger.release.xcconfig"; sourceTree = "<group>"; };
 		4EF3312027AD18D6C9896801 /* Pods_FirebaseMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC0072AC47368A5609B0C0E /* Pods-FirebaseMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseMessenger.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseMessenger/Pods-FirebaseMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessengerViewModel.swift; sourceTree = "<group>"; };
+		9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9F7C2D9B28D0B4DF00F19628 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		9FF4FD4828CB867D009B78B9 /* FirebaseMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF4FD4B28CB867D009B78B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FF4FD4D28CB867D009B78B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +143,10 @@
 		9FF4FD6128CB88D1009B78B9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */,
+				9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */,
+				9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */,
+				9F7C2D9B28D0B4DF00F19628 /* ConversationsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,8 +274,12 @@
 				9FF4FD6928CB8974009B78B9 /* RegisterView.swift in Sources */,
 				9FF4FD6728CB8966009B78B9 /* FirebaseMessengerView.swift in Sources */,
 				9FF4FD4E28CB867D009B78B9 /* SceneDelegate.swift in Sources */,
+				9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */,
+				9F7C2D9A28D0B4C700F19628 /* LoginViewModel.swift in Sources */,
+				9F7C2D9C28D0B4DF00F19628 /* ConversationsViewModel.swift in Sources */,
 				9FF4FD6B28CB8983009B78B9 /* LoginView.swift in Sources */,
 				9FF4FD6F28CBAF61009B78B9 /* ConversationsController.swift in Sources */,
+				9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */,
 				9FF4FD6528CB8953009B78B9 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

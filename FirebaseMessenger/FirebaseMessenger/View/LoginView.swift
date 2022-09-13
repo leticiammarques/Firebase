@@ -111,7 +111,6 @@ class LoginView: UIView {
         }
         
         logo.snp.makeConstraints{
-            $0.top.equalTo(imgTop.snp.bottom).offset(19)
             $0.left.equalToSuperview().offset(56)
             $0.width.height.equalTo(55)
         }
@@ -124,6 +123,7 @@ class LoginView: UIView {
         
         emailField.snp.makeConstraints{
             $0.centerX.equalToSuperview()
+            $0.top.equalTo(logo.snp.bottom).offset(70)
             $0.bottom.equalTo(passwordField.snp.top).offset(-23)
             $0.left.equalToSuperview().offset(64)
             $0.right.equalToSuperview().offset(-64)
@@ -132,6 +132,7 @@ class LoginView: UIView {
         
         passwordField.snp.makeConstraints{
             $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.bottom.equalTo(btnLogin.snp.top).offset(-40)
             $0.left.equalToSuperview().offset(64)
             $0.right.equalToSuperview().offset(-64)
@@ -139,7 +140,6 @@ class LoginView: UIView {
         }
         
         btnLogin.snp.makeConstraints{
-            $0.bottom.equalTo(imgBottom.snp.top).offset(-78)
             $0.centerX.equalToSuperview()
             $0.left.equalToSuperview().offset(80)
             $0.right.equalToSuperview().offset(-80)

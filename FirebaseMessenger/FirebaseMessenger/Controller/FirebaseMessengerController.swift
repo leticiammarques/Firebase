@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol FirebaseMessengerProtocol {
+    func tapRegister()
+    func tapLogin()
+}
+
 class FirebaseMessengerController: UIViewController {
     
     let customView: FirebaseMessengerView = FirebaseMessengerView()
