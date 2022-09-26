@@ -9,18 +9,14 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class FirebaseMessengerViewModel: NSObject {
-    
-    var controller = FirebaseMessengerController()
-    
+class FirebaseMessengerViewModel: BaseViewModel {
+
     private func didTapRegister() {
-        let vc = RegisterController()
-        controller.navigationController?.pushViewController(vc, animated: true)
+
     }
     
     private func didTapLogin() {
-        let vc = LoginController()
-        controller.navigationController?.pushViewController(vc, animated: true)
+
     }
 }
 

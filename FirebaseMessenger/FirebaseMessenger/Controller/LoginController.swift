@@ -10,24 +10,14 @@ import UIKit
 import SnapKit
 import FirebaseAuth
 
-class LoginController: UIViewController {
-    
-    let customView: LoginView = LoginView()
+class LoginController: BaseViewController<LoginView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         customView.btnLogin.addTarget(self, action: #selector(loginUser), for: .touchUpInside)
-        
-        self.setUp()
     }
 
-    func setUp() {
-        self.view.addSubview(customView)
-        customView.snp.makeConstraints{
-            $0.bottom.top.left.right.equalToSuperview()
-        }
-    }
     
     @objc private func loginUser() {
         
@@ -53,6 +43,7 @@ class LoginController: UIViewController {
             
             let user = result.user
             print("Login do usuário \(user)")
+            strongSelf.navigationController?.pushViewController(ConversationsController(), animated: true)
             strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         })
     }

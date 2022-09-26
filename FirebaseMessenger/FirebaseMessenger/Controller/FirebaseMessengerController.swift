@@ -6,40 +6,37 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxRelay
 
 protocol FirebaseMessengerProtocol {
     func tapRegister()
     func tapLogin()
 }
 
-class FirebaseMessengerController: UIViewController {
+class FirebaseMessengerController: BaseViewController<FirebaseMessengerView> {
     
-    let customView: FirebaseMessengerView = FirebaseMessengerView()
+    var viewModel: FirebaseMessengerProtocol {
+        return baseViewModel as! FirebaseMessengerProtocol
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customView.btnCadastro.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
-        customView.btnLogin.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        self.bind()
+    }
+    
+
+
+    func bind() {
+        self.customView.btnLogin.rx.tap.bind { [weak self] in
+            let loginViewModel = LoginViewModel()
+            let login = LoginController(viewModel: loginViewModel)
+            self?.navigationController?.pushViewController(login, animated: true)
+        }
         
-        self.setUp()
     }
 
-    func setUp() {
-        self.view.addSubview(customView)
-        customView.snp.makeConstraints{
-            $0.bottom.top.left.right.equalToSuperview()
-        }
-    }
-    
-    @objc private func didTapRegister() {
-        let vc = RegisterController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc private func didTapLogin() {
-        let vc = LoginController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 

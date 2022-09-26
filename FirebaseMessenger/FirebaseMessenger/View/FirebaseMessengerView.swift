@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class FirebaseMessengerView: UIView {
+class FirebaseMessengerView: BaseView {
        
     var imageTop: UIImageView = {
         let imgTop = UIImageView()
@@ -17,16 +17,16 @@ class FirebaseMessengerView: UIView {
         return imgTop
     }()
     
-    var text: UILabel = {
+    var txtTitle: UILabel = {
         let txt = UILabel()
         txt.text = "PrivieLegius"
         txt.font = UIFont.boldSystemFont(ofSize: 26)
         txt.numberOfLines = 0
-        txt.textColor = .white
+        txt.textColor = .black
         return txt
     }()
     
-    var logo: UIImageView = {
+    var imgLogo: UIImageView = {
         let lg = UIImageView()
         lg.image = UIImage(named: "logo")
         return lg
@@ -37,9 +37,10 @@ class FirebaseMessengerView: UIView {
         btn.setTitle("Login", for: .normal)
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = UIColor(named: "rosa")
         btn.layer.cornerRadius = 5
-        btn.layer.borderColor = UIColor.white.cgColor
+        btn.layer.borderColor = UIColor.black.cgColor
         btn.layer.borderWidth = 2
         return btn
     }()
@@ -49,9 +50,10 @@ class FirebaseMessengerView: UIView {
         btn.setTitle("Cadastro", for: .normal)
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = UIColor(named: "azul")
         btn.layer.cornerRadius = 5
-        btn.layer.borderColor = UIColor.white.cgColor
+        btn.layer.borderColor = UIColor.black.cgColor
         btn.layer.borderWidth = 2
         return btn
     }()
@@ -73,51 +75,62 @@ class FirebaseMessengerView: UIView {
     
     func setup() {
         self.addSubview(imageTop)
-        self.addSubview(text)
-        self.addSubview(logo)
+        self.addSubview(txtTitle)
+        self.addSubview(imgLogo)
         self.addSubview(btnLogin)
         self.addSubview(btnCadastro)
         self.addSubview(imageBottom)
         
-        self.backgroundColor = .black
+        self.backgroundColor = .white
         
-        imageTop.snp.makeConstraints{
-            $0.top.left.right.equalToSuperview()
-            $0.height.equalTo(74)
-        }
+        imageTop.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageTop.topAnchor.constraint(equalTo: self.topAnchor),
+            imageTop.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageTop.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageTop.heightAnchor.constraint(equalToConstant: 74)
+        ])
         
-        text.snp.makeConstraints{
-            $0.top.equalTo(imageTop.snp.bottom).offset(146)
-            $0.right.equalToSuperview().offset(-32)
-        }
+        txtTitle.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            txtTitle.topAnchor.constraint(equalTo: imageTop.topAnchor, constant: 146),
+            txtTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -32)
+        ])
         
-        logo.snp.makeConstraints{
-            $0.centerY.equalTo(text.snp.centerY)
-            $0.left.equalToSuperview().offset(32)
-            $0.right.equalTo(text.snp.left).offset(-14)
-            $0.height.width.equalTo(88)
-        }
+        imgLogo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imgLogo.centerYAnchor.constraint(equalTo: txtTitle.centerYAnchor),
+            imgLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 32),
+            imgLogo.trailingAnchor.constraint(equalTo: txtTitle.leadingAnchor, constant: -14),
+            imgLogo.heightAnchor.constraint(equalToConstant: 88),
+            imgLogo.widthAnchor.constraint(equalToConstant: 88)
+        ])
         
-        btnLogin.snp.makeConstraints{
-            $0.top.equalTo(logo.snp.bottom).offset(60)
-            $0.centerX.equalToSuperview()
-            $0.left.equalToSuperview().offset(80)
-            $0.right.equalToSuperview().offset(-80)
-            $0.height.equalTo(40)
-        }
+        btnLogin.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            btnLogin.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            btnLogin.topAnchor.constraint(equalTo: imgLogo.bottomAnchor, constant: 80),
+            btnLogin.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            btnLogin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
+            btnLogin.heightAnchor.constraint(equalToConstant: 40)
+        ])
+
+        btnCadastro.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            btnCadastro.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            btnCadastro.topAnchor.constraint(equalTo: btnLogin.bottomAnchor, constant: 14),
+            btnCadastro.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            btnCadastro.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
+            btnCadastro.heightAnchor.constraint(equalToConstant: 40)
+        ])
         
-        btnCadastro.snp.makeConstraints{
-            $0.top.equalTo(btnLogin.snp.bottom).offset(14)
-            $0.centerX.equalToSuperview()
-            $0.left.equalToSuperview().offset(80)
-            $0.right.equalToSuperview().offset(-80)
-            $0.height.equalTo(40)
-        }
-        
-        imageBottom.snp.makeConstraints{
-            $0.bottom.left.right.equalToSuperview()
-            $0.height.equalTo(60)
-        }
+        imageBottom.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageBottom.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            imageBottom.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageBottom.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageBottom.heightAnchor.constraint(equalToConstant: 74)
+        ])
     }
     
 }

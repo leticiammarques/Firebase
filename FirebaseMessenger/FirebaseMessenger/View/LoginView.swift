@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class LoginView: UIView {
+class LoginView: BaseView {
     
     var imgTop: UIImageView = {
         let img = UIImageView()
@@ -27,7 +27,7 @@ class LoginView: UIView {
         let tl = UILabel()
         tl.text = "PrivieLegius"
         tl.font = UIFont.boldSystemFont(ofSize: 26)
-        tl.textColor = .white
+        tl.textColor = .black
         tl.numberOfLines = 0
         return tl
     }()
@@ -40,7 +40,7 @@ class LoginView: UIView {
         field.returnKeyType = .continue
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
-        field.layer.borderColor = UIColor.white.cgColor
+        field.layer.borderColor = UIColor.black.cgColor
         field.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         field.textColor = .white
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -57,7 +57,7 @@ class LoginView: UIView {
         field.returnKeyType = .continue
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
-        field.layer.borderColor = UIColor.white.cgColor
+        field.layer.borderColor = UIColor.black.cgColor
         field.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         field.textColor = .white
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -73,8 +73,9 @@ class LoginView: UIView {
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         btn.backgroundColor = UIColor(named: "rosa")
+        btn.setTitleColor(UIColor.black, for: .normal)
         btn.layer.cornerRadius = 5
-        btn.layer.borderColor = UIColor.white.cgColor
+        btn.layer.borderColor = UIColor.black.cgColor
         btn.layer.borderWidth = 2
         return btn
     }()
@@ -103,7 +104,7 @@ class LoginView: UIView {
         self.addSubview(btnLogin)
         self.addSubview(imgBottom)
         
-        self.backgroundColor = .black
+        self.backgroundColor = .white
         
         imgTop.snp.makeConstraints{
             $0.top.left.right.equalToSuperview()

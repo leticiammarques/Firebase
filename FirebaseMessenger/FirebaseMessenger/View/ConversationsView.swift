@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import UIKit
 
-class ConversationsView: UIView {
+class ConversationsView: BaseView {
     
     
     

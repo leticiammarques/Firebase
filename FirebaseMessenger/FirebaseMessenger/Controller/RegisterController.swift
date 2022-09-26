@@ -8,20 +8,11 @@
 import Foundation
 import UIKit
 
-class RegisterController: UIViewController {
-    
-    let customView: RegisterView = RegisterView()
+class RegisterController: BaseViewController<RegisterView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUp()
     }
 
-    func setUp() {
-        self.view.addSubview(customView)
-        customView.snp.makeConstraints{
-            $0.bottom.top.left.right.equalToSuperview()
-        }
-    }
     
 }

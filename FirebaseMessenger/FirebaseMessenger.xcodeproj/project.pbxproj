@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F45E97528D52A74006F96C0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97428D52A74006F96C0 /* BaseViewModel.swift */; };
+		9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97628D52ABF006F96C0 /* BaseViewController.swift */; };
+		9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97828D52ACB006F96C0 /* BaseView.swift */; };
+		9F45E97D28D53090006F96C0 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97C28D53090006F96C0 /* LoginFactory.swift */; };
 		9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */; };
 		9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */; };
 		9F7C2D9A28D0B4C700F19628 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */; };
@@ -32,6 +36,10 @@
 		340363E3A420AA899E9F165B /* Pods-FirebaseMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseMessenger.release.xcconfig"; path = "Target Support Files/Pods-FirebaseMessenger/Pods-FirebaseMessenger.release.xcconfig"; sourceTree = "<group>"; };
 		4EF3312027AD18D6C9896801 /* Pods_FirebaseMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC0072AC47368A5609B0C0E /* Pods-FirebaseMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseMessenger.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseMessenger/Pods-FirebaseMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		9F45E97428D52A74006F96C0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		9F45E97628D52ABF006F96C0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9F45E97828D52ACB006F96C0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		9F45E97C28D53090006F96C0 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessengerViewModel.swift; sourceTree = "<group>"; };
 		9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -83,6 +91,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9F45E97328D52A53006F96C0 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				9F45E97428D52A74006F96C0 /* BaseViewModel.swift */,
+				9F45E97628D52ABF006F96C0 /* BaseViewController.swift */,
+				9F45E97828D52ACB006F96C0 /* BaseView.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		9FF4FD3F28CB867D009B78B9 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +122,7 @@
 		9FF4FD4A28CB867D009B78B9 /* FirebaseMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				9F45E97328D52A53006F96C0 /* New Group */,
 				9FF4FD6128CB88D1009B78B9 /* ViewModel */,
 				9FF4FD6028CB8853009B78B9 /* Controller */,
 				9FF4FD5F28CB8713009B78B9 /* View */,
@@ -114,6 +133,7 @@
 				9FF4FD5628CB8683009B78B9 /* LaunchScreen.storyboard */,
 				9FF4FD5928CB8683009B78B9 /* Info.plist */,
 				9FF4FD6C28CB8BC0009B78B9 /* GoogleService-Info.plist */,
+				9F45E97C28D53090006F96C0 /* LoginFactory.swift */,
 			);
 			path = FirebaseMessenger;
 			sourceTree = "<group>";
@@ -270,6 +290,7 @@
 				9FF4FD6328CB8946009B78B9 /* RegisterController.swift in Sources */,
 				9FF4FD5028CB867D009B78B9 /* FirebaseMessengerController.swift in Sources */,
 				9FF4FD4C28CB867D009B78B9 /* AppDelegate.swift in Sources */,
+				9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */,
 				9FF4FD7128CBAF73009B78B9 /* ConversationsView.swift in Sources */,
 				9FF4FD6928CB8974009B78B9 /* RegisterView.swift in Sources */,
 				9FF4FD6728CB8966009B78B9 /* FirebaseMessengerView.swift in Sources */,
@@ -278,7 +299,10 @@
 				9F7C2D9A28D0B4C700F19628 /* LoginViewModel.swift in Sources */,
 				9F7C2D9C28D0B4DF00F19628 /* ConversationsViewModel.swift in Sources */,
 				9FF4FD6B28CB8983009B78B9 /* LoginView.swift in Sources */,
+				9F45E97528D52A74006F96C0 /* BaseViewModel.swift in Sources */,
 				9FF4FD6F28CBAF61009B78B9 /* ConversationsController.swift in Sources */,
+				9F45E97D28D53090006F96C0 /* LoginFactory.swift in Sources */,
+				9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */,
 				9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */,
 				9FF4FD6528CB8953009B78B9 /* LoginController.swift in Sources */,
 			);

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class RegisterView: UIView {
+class RegisterView: BaseView {
     
     var imgTop: UIImageView = {
         let img = UIImageView()
