@@ -14,8 +14,11 @@ import RxRelay
 protocol LoginProtocol {
     func openConversation(controller: UIViewController)
     func openModalErro(controller: UIViewController)
+    func openModalErroData(controller: UIViewController)
     func loginInFirebase(email: String, senha: String)
     var clickLoginObserver: Observable<Bool> { get }
+    var dataIsEmpty: Observable<Bool> { get }
+    var valitedData: Observable<Bool> { get }
 }
 
 class LoginController: BaseViewController<LoginView> {
@@ -27,10 +30,10 @@ class LoginController: BaseViewController<LoginView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bind()
+        
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
-        
-        bind()
     }
     
     func makeBackButton() -> UIButton {
@@ -62,8 +65,18 @@ class LoginController: BaseViewController<LoginView> {
         self.viewModel.clickLoginObserver.subscribe(onNext: { value in
             if(value) {
                 self.viewModel.openConversation(controller: self)
-            } else {
+            }
+        }).disposed(by: disposeBag)
+        
+        self.viewModel.dataIsEmpty.subscribe(onNext: { value in
+            if(value) {
                 self.viewModel.openModalErro(controller: self)
+            }
+        }).disposed(by: disposeBag)
+        
+        self.viewModel.valitedData.subscribe(onNext: { value in
+            if (value) {
+                self.viewModel.openModalErroData(controller: self)
             }
         }).disposed(by: disposeBag)
     }
