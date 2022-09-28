@@ -41,11 +41,11 @@ class LoginView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        field.textColor = .white
+        field.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = UIColor(named: "txtField")
+        field.backgroundColor = UIColor.clear
         return field
     }()
     
@@ -58,11 +58,11 @@ class LoginView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        field.textColor = .white
+        field.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = UIColor(named: "txtField")
+        field.backgroundColor = UIColor.clear
         field.isSecureTextEntry = true
         return field
     }()
@@ -106,50 +106,62 @@ class LoginView: BaseView {
         
         self.backgroundColor = .white
         
-        imgTop.snp.makeConstraints{
-            $0.top.left.right.equalToSuperview()
-            $0.height.equalTo(74)
-        }
+        imgTop.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imgTop.topAnchor.constraint(equalTo: self.topAnchor),
+            imgTop.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imgTop.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imgTop.heightAnchor.constraint(equalToConstant: 74)
+        ])
         
-        logo.snp.makeConstraints{
-            $0.left.equalToSuperview().offset(56)
-            $0.width.height.equalTo(55)
-        }
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            logo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
+            logo.heightAnchor.constraint(equalToConstant: 55),
+            logo.widthAnchor.constraint(equalToConstant: 55)
+        ])
         
-        title.snp.makeConstraints{
-            $0.left.equalTo(logo.snp.right).offset(14)
-            $0.right.equalToSuperview().offset(56)
-            $0.centerY.equalTo(logo.snp.centerY)
-        }
+        title.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            title.leadingAnchor.constraint(equalTo: logo.trailingAnchor, constant: 20),
+            title.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -48),
+            title.centerYAnchor.constraint(equalTo: logo.centerYAnchor)
+        ])
         
-        emailField.snp.makeConstraints{
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(logo.snp.bottom).offset(70)
-            $0.bottom.equalTo(passwordField.snp.top).offset(-23)
-            $0.left.equalToSuperview().offset(64)
-            $0.right.equalToSuperview().offset(-64)
-            $0.height.equalTo(30)
-        }
+        emailField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            emailField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            emailField.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 70),
+            emailField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 64),
+            emailField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -64),
+            emailField.heightAnchor.constraint(equalToConstant: 30)
+        ])
         
-        passwordField.snp.makeConstraints{
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
-            $0.bottom.equalTo(btnLogin.snp.top).offset(-40)
-            $0.left.equalToSuperview().offset(64)
-            $0.right.equalToSuperview().offset(-64)
-            $0.height.equalTo(30)
-        }
+        passwordField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            passwordField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            passwordField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 23),
+            passwordField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 64),
+            passwordField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -64),
+            passwordField.heightAnchor.constraint(equalToConstant: 30)
+        ])
         
-        btnLogin.snp.makeConstraints{
-            $0.centerX.equalToSuperview()
-            $0.left.equalToSuperview().offset(80)
-            $0.right.equalToSuperview().offset(-80)
-            $0.height.equalTo(40)
-        }
+        btnLogin.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            btnLogin.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            btnLogin.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 40),
+            btnLogin.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            btnLogin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
+            btnLogin.heightAnchor.constraint(equalToConstant: 40)
+        ])
         
-        imgBottom.snp.makeConstraints{
-            $0.bottom.left.right.equalToSuperview()
-            $0.height.equalTo(60)
-        }
+        imgBottom.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imgBottom.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            imgBottom.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imgBottom.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imgBottom.heightAnchor.constraint(equalToConstant: 74)
+        ])
     }
 }

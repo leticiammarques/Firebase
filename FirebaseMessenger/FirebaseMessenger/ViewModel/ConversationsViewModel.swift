@@ -5,4 +5,10 @@
 //  Created by leticia marques on 13/09/22.
 //
 
-import Foundation
+import UIKit
+import RxCocoa
+import RxSwift
+
+class ConversationsViewModel: BaseViewModel {
+    
+}

@@ -68,3 +68,37 @@ class BaseViewController<CustomView: UIView>: UIViewController {
         print("dealloc ---> \(String(describing: type(of: self)))")
     }
 }
+
+extension BaseViewController {
+
+    private func removeBackButtonTitle() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backButtonTitle = ""
+    }
+    
+    @discardableResult public func addButtonOnNavigationBar(content: NavigationbarContentType, position: NavigationbarPosition, block: @escaping () -> Void) -> UIBarButtonItem {
+        
+        let barButtonItem: UIBarButtonItem
+        switch content {
+        case .text(let title):
+            barButtonItem = UIBarButtonItem(title: title, style: .done, target: nil, action: nil)
+        case .image(let image):
+            barButtonItem = UIBarButtonItem(image: image, style: .done, target: nil, action: nil)
+        }
+        
+        _ = barButtonItem.rx.tap
+            .take(until: self.rx.deallocated)
+            .subscribe(onNext: {(_) in
+                block()
+            })
+        
+        switch position {
+        case .left:
+            navigationItem.leftBarButtonItem = barButtonItem
+        case .right:
+            navigationItem.rightBarButtonItem = barButtonItem
+        }
+        
+        return barButtonItem
+    }
+}

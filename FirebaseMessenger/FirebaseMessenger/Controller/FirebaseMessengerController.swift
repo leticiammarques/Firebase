@@ -11,8 +11,8 @@ import RxCocoa
 import RxRelay
 
 protocol FirebaseMessengerProtocol {
-    func tapRegister()
-    func tapLogin()
+    func tapRegister(controller: UIViewController)
+    func tapLogin(controller: UIViewController)
 }
 
 class FirebaseMessengerController: BaseViewController<FirebaseMessengerView> {
@@ -30,11 +30,15 @@ class FirebaseMessengerController: BaseViewController<FirebaseMessengerView> {
 
 
     func bind() {
+        disposeBag = DisposeBag()
+        
         self.customView.btnLogin.rx.tap.bind { [weak self] in
-            let loginViewModel = LoginViewModel()
-            let login = LoginController(viewModel: loginViewModel)
-            self?.navigationController?.pushViewController(login, animated: true)
-        }
+            self?.viewModel.tapLogin(controller: self!)
+        }.disposed(by: disposeBag)
+        
+        self.customView.btnCadastro.rx.tap.bind { [weak self] in
+            self?.viewModel.tapRegister(controller: self!)
+        }.disposed(by: disposeBag)
         
     }
 

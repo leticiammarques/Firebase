@@ -7,50 +7,64 @@
 
 import Foundation
 import UIKit
-import SnapKit
-import FirebaseAuth
+import RxSwift
+import RxCocoa
+import RxRelay
+
+protocol LoginProtocol {
+    func openConversation(controller: UIViewController)
+    func openModalErro(controller: UIViewController)
+    func loginInFirebase(email: String, senha: String)
+    var clickLoginObserver: Observable<Bool> { get }
+}
 
 class LoginController: BaseViewController<LoginView> {
+    
+    var viewModel: LoginProtocol {
+        return baseViewModel as! LoginProtocol
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customView.btnLogin.addTarget(self, action: #selector(loginUser), for: .touchUpInside)
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
+        
+        bind()
+    }
+    
+    func makeBackButton() -> UIButton {
+        let backButtonImage = UIImage(named: "btn_back")?.withRenderingMode(.alwaysTemplate)
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(backButtonImage, for: .normal)
+        backButton.addTarget(self, action: #selector(self.backButtonPressed), for: .touchUpInside)
+        return backButton
     }
 
-    
-    @objc private func loginUser() {
-        
-        customView.emailField.resignFirstResponder()
-        customView.passwordField.resignFirstResponder()
-        
-        guard let email = customView.emailField.text, let password = customView.passwordField.text, password.count >= 6 else {
-            print("email/senha não podem estar vazios")
-            alertUserLoginError()
-            return
-        }
-        
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] authResult, error in
-            
-            guard let strongSelf = self else {
-                return
-            }
-            
-            guard let result = authResult, error == nil else {
-                print("Falha no login do usuário do email: \(email)")
-                return
-            }
-            
-            let user = result.user
-            print("Login do usuário \(user)")
-            strongSelf.navigationController?.pushViewController(ConversationsController(), animated: true)
-            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
-        })
+    @objc func backButtonPressed() {
+        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
-    func alertUserLoginError() {
-        let alert = UIAlertController(title: "Oooopa", message: "Por favor, insira todas as informações para fazer login.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-        present(alert, animated: true)
+    func bind() {
+        
+        disposeBag = DisposeBag()
+                
+        self.customView.btnLogin.rx.tap.bind { [weak self] in
+
+            let email: String = self?.customView.emailField.text ?? ""
+            let password: String = self?.customView.passwordField.text ?? ""
+            
+            self?.viewModel.loginInFirebase(email: email, senha: password)
+            
+        }.disposed(by: disposeBag)
+        
+        self.viewModel.clickLoginObserver.subscribe(onNext: { value in
+            if(value) {
+                self.viewModel.openConversation(controller: self)
+            } else {
+                self.viewModel.openModalErro(controller: self)
+            }
+        }).disposed(by: disposeBag)
     }
 }

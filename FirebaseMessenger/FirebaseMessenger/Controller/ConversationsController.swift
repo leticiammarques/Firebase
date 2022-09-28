@@ -9,25 +9,13 @@ import Foundation
 import FirebaseAuth
 import RxSwift
 
-class ConversationsController: UIViewController {
+class ConversationsController: BaseViewController<ConversationsView> {
     
-    let customView: ConversationsView = ConversationsView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        self.setUp()
+      
     }
-
-    func setUp() {
-        self.view.addSubview(customView)
-        customView.snp.makeConstraints{
-            $0.bottom.top.left.right.equalToSuperview()
-        }
-    }
-
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
