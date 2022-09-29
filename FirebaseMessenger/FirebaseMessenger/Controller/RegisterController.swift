@@ -12,21 +12,27 @@ import RxCocoa
 import RxRelay
 
 protocol RegisterProtocol {
-    func finishRegister(controller: UIViewController)
+    func openErrorUserCreated(controller: UIViewController)
     func openErrorPassword(controller: UIViewController)
     func openErrorBlanked(controller: UIViewController)
-    func registerFirebase(email: String, password: String, confirmPassword: String)
+    func finishRegister(controller: UIViewController)
+    func registerFirebase(name:String, secondName: String, email: String, password: String, confirmPassword: String)
     var clickRegisterObserver: Observable<Bool> { get }
     var isEmptyObserver: Observable<Bool> { get }
     var validateDataObserver: Observable<Bool> { get }
+    var confirmPassword: Observable<Bool> { get }
 }
 
 class RegisterController: BaseViewController<RegisterView> {
     
+    var viewModel: RegisterProtocol {
+        return baseViewModel as! RegisterProtocol
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        bind()
+        bind()
         
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
@@ -48,16 +54,41 @@ class RegisterController: BaseViewController<RegisterView> {
     func bind() {
         
         disposeBag = DisposeBag()
-//
-//        self.customView.registerButton.rx.tap.bind { [weak self] in
-//
-////            let email: String = self?.customView.emailField.text ?? ""
-////            let password: String = self?.customView.passwordField.text ?? ""
-//
-//
-//
-//        }.disposed(by: disposeBag)
+
+        self.customView.registerButton.rx.tap.bind { [weak self] in
+            let name: String = self?.customView.firstNameField.text ?? ""
+            let second: String = self?.customView.secondNameField.text ?? ""
+            let email: String = self?.customView.emailField.text ?? ""
+            let password: String = self?.customView.passwordField.text ?? ""
+            let confirmPasswd: String = self?.customView.confirmPasswordField.text ?? ""
+
+            self?.viewModel.registerFirebase(name: name, secondName: second, email: email, password: password, confirmPassword: confirmPasswd)
+
+        }.disposed(by: disposeBag)
         
+        self.viewModel.clickRegisterObserver.subscribe(onNext: { value in
+            if(value) {
+                self.viewModel.finishRegister(controller: self)
+            }
+        }).disposed(by: disposeBag)
+        
+        self.viewModel.validateDataObserver.subscribe(onNext: { value in
+            if(value) {
+                self.viewModel.openErrorUserCreated(controller: self)
+            }
+        }).disposed(by: disposeBag)
+        
+        self.viewModel.isEmptyObserver.subscribe(onNext: { value in
+            if (value) {
+                self.viewModel.openErrorBlanked(controller: self)
+            }
+        }).disposed(by: disposeBag)
+        
+        self.viewModel.confirmPassword.subscribe(onNext: {value in
+            if(value) {
+                self.viewModel.openErrorPassword(controller: self)
+            }
+        }).disposed(by: disposeBag)
         
     }
     

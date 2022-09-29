@@ -14,7 +14,7 @@ class RegisterViewModel: BaseViewModel {
     private let clickRegisterRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     private let dataVerificatedRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     private let verificatedIsEmptyRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-    
+    private let verificatedPasswordRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
     private func register(name: String, secondName: String, email: String, passwd: String, confirmPasswd: String) {
         
@@ -23,42 +23,38 @@ class RegisterViewModel: BaseViewModel {
             self.verificatedIsEmptyRelay.accept(true)
             return
         }
-        
-        
-        
-        // Firebase Register
-        
-//        DatabaseManager.shared.userExists(with: email, completion: { [weak self] exists in
-//
-//            guard let strongSelf = self else {
-//                return
-//            }
-//
-//            guard !exists else {
-//                self?.alertUserLoginError(message: "Looks like a user account for that email address already exists.")
-//                return
-//            }
-//
-//            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
-//
-//                guard authResult != nil, error == nil else {
-//                    print("Error cureating user")
-//                    return
-//                }
-//
-//                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
-//
-//                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
-//            })
-//
-//        })
-        
+
+        guard passwd == confirmPasswd else {
+            print("Senhas não são compatíveis")
+            self.verificatedPasswordRelay.accept(true)
+            return
+        }
+
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: passwd, completion: { authResult, error in
+            
+            guard authResult != nil, error == nil else {
+                print("Error cureating user")
+                return
+            }
+            
+            let user = authResult!.user
+            print("Cadastro do usuário \(user)")
+            
+            self.clickRegisterRelay.accept(true)
+        })
+             
     }
     
     func openHome(controller: UIViewController) {
-        let viewModel = LoginViewModel()
-        let controllerLogin = LoginController(viewModel: viewModel)
-        controller.navigationController?.pushViewController(controllerLogin, animated: true)
+        let viewModel = ConversationsViewModel()
+        let controllerConversation = ConversationsController(viewModel: viewModel)
+        controller.navigationController?.pushViewController(controllerConversation, animated: true)
+    }
+    
+    func alertBlankedError(controller: UIViewController) {
+        let alert = UIAlertController(title: "Oooopa", message: "Por favor, insira todas as informações para fazer login.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
+        controller.present(alert, animated: true)
     }
     
     func alertRegisterUserError(controller: UIViewController) {
@@ -74,26 +70,42 @@ class RegisterViewModel: BaseViewModel {
     }
 }
 
-//extension RegisterViewModel: RegisterProtocol {
-//    var clickRegisterObserver: Observable<Bool> {
-//        
-//    }
-//    
-//    func finishRegister(controller: UIViewController) {
-//        
-//    }
-//    
-//    func openErrorPassword(controller: UIViewController) {
-//        
-//    }
-//    
-//    func openErrorBlanked(controller: UIViewController) {
-//        
-//    }
-//    
-//    func registerFirebase(email: String, password: String, confirmPassword: String) {
-//        
-//    }
-//    
-//    
-//}
+extension RegisterViewModel: RegisterProtocol {
+    
+    func openErrorUserCreated(controller: UIViewController) {
+        self.alertRegisterUserError(controller: controller)
+    }
+    
+    func openErrorPassword(controller: UIViewController) {
+        self.alertUserError(controller: controller)
+    }
+    
+    func openErrorBlanked(controller: UIViewController) {
+        self.alertBlankedError(controller: controller)
+    }
+    
+    
+    func finishRegister(controller: UIViewController) {
+        self.openHome(controller: controller)
+    }
+    
+    func registerFirebase(name:String, secondName: String, email: String, password: String, confirmPassword: String) {
+        self.register(name: name, secondName: secondName, email: email, passwd: password, confirmPasswd: confirmPassword)
+    }
+    
+    var isEmptyObserver: Observable<Bool> {
+        return verificatedIsEmptyRelay.asObservable()
+    }
+    
+    var validateDataObserver: Observable<Bool> {
+        return dataVerificatedRelay.asObservable()
+    }
+    
+    var clickRegisterObserver: Observable<Bool> {
+        return clickRegisterRelay.asObservable()
+    }
+    
+    var confirmPassword: Observable<Bool> {
+        return verificatedPasswordRelay.asObservable()
+    }
+}

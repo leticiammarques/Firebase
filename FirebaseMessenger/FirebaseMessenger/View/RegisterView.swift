@@ -33,7 +33,7 @@ class RegisterView: BaseView {
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
         field.attributedPlaceholder = NSAttributedString(string: "Nome", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        field.textColor = .white
+        field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = UIColor.clear
@@ -50,7 +50,7 @@ class RegisterView: BaseView {
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
         field.attributedPlaceholder = NSAttributedString(string: "Sobrenome", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        field.textColor = .white
+        field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = UIColor.clear
@@ -67,7 +67,7 @@ class RegisterView: BaseView {
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
         field.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        field.textColor = .white
+        field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = UIColor.clear
@@ -84,10 +84,11 @@ class RegisterView: BaseView {
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
         field.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        field.textColor = .white
+        field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = UIColor.clear
+        field.isSecureTextEntry = true
         return field
     }()
     
@@ -101,21 +102,23 @@ class RegisterView: BaseView {
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
         field.attributedPlaceholder = NSAttributedString(string: "Confirme a senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        field.textColor = .white
+        field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = UIColor.clear
+        field.isSecureTextEntry = true
         return field
     }()
     
     var registerButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Cadastro", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         btn.backgroundColor = UIColor(named: "azul")
         btn.layer.cornerRadius = 5
-        btn.layer.borderColor = UIColor.white.cgColor
+        btn.layer.borderColor = UIColor.black.cgColor
         btn.layer.borderWidth = 2
         return btn
     }()
