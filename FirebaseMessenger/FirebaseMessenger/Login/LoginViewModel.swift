@@ -40,39 +40,9 @@ class LoginViewModel: BaseViewModel {
             self?.clickLoginRelay.accept(true)
         })
     }
-    
-    func openHome(controller: UIViewController) {
-        let viewModel = ConversationsViewModel()
-        let controllerConversation = ConversationsController(viewModel: viewModel)
-        controller.navigationController?.pushViewController(controllerConversation, animated: true)
-    }
-    
-    func alertUserLoginError(controller: UIViewController) {
-        let alert = UIAlertController(title: "Oooopa", message: "Por favor, insira todas as informações para fazer login.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-        controller.present(alert, animated: true)
-    }
-    
-    func alertUserError(controller: UIViewController) {
-        let alert = UIAlertController(title: "Oooopa", message: "Email e/ou senha incorretos", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-        controller.present(alert, animated: true)
-    }
 }
 
 extension LoginViewModel: LoginProtocol {
-    
-    func openModalErroData(controller: UIViewController) {
-        self.alertUserError(controller: controller)
-    }
-    
-    func openModalErro(controller: UIViewController) {
-        self.alertUserLoginError(controller: controller)
-    }
-    
-    func openConversation(controller: UIViewController) {
-        self.openHome(controller: controller)
-    }
     
     func loginInFirebase(email: String, senha: String) {
         self.loginUser(email: email, senha: senha)

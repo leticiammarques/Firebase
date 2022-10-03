@@ -12,9 +12,6 @@ import RxCocoa
 import RxRelay
 
 protocol LoginProtocol {
-    func openConversation(controller: UIViewController)
-    func openModalErro(controller: UIViewController)
-    func openModalErroData(controller: UIViewController)
     func loginInFirebase(email: String, senha: String)
     var clickLoginObserver: Observable<Bool> { get }
     var dataIsEmpty: Observable<Bool> { get }
@@ -63,21 +60,33 @@ class LoginController: BaseViewController<LoginView> {
         }.disposed(by: disposeBag)
         
         self.viewModel.clickLoginObserver.subscribe(onNext: { value in
+            
             if(value) {
-                self.viewModel.openConversation(controller: self)
+                let viewModel = ConversationsViewModel()
+                let controllerConversation = ConversationsController(viewModel: viewModel)
+                self.navigationController?.pushViewController(controllerConversation, animated: true)
             }
+            
         }).disposed(by: disposeBag)
         
         self.viewModel.dataIsEmpty.subscribe(onNext: { value in
+            
             if(value) {
-                self.viewModel.openModalErro(controller: self)
+                let alert = UIAlertController(title: "Oooopa", message: "Por favor, insira todas as informações para fazer login.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
+            
         }).disposed(by: disposeBag)
         
         self.viewModel.valitedData.subscribe(onNext: { value in
+            
             if (value) {
-                self.viewModel.openModalErroData(controller: self)
+                let alert = UIAlertController(title: "Oooopa", message: "Email e/ou senha incorretos", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
+            
         }).disposed(by: disposeBag)
     }
 }
