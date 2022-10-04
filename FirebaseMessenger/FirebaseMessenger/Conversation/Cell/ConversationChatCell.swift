@@ -14,7 +14,7 @@ class ConversationChatCell: UITableViewCell {
     
     var viewBody: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -44,6 +44,14 @@ class ConversationChatCell: UITableViewCell {
         return label
     }()
     
+    let hoursSend: UILabel = {
+       let label = UILabel()
+        label.text = "04:30"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -61,8 +69,9 @@ class ConversationChatCell: UITableViewCell {
         
         self.addSubview(viewBody)
         viewBody.addSubview(photoPerson)
-        
-        self.backgroundColor = .blue
+        viewBody.addSubview(namePerson)
+        viewBody.addSubview(mensagePerson)
+        viewBody.addSubview(hoursSend)
 
         viewBody.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -79,6 +88,25 @@ class ConversationChatCell: UITableViewCell {
             photoPerson.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             photoPerson.heightAnchor.constraint(equalToConstant: 52),
             photoPerson.widthAnchor.constraint(equalToConstant: 52)
+        ])
+        
+        namePerson.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            namePerson.topAnchor.constraint(equalTo: self.topAnchor, constant: 17),
+            namePerson.leadingAnchor.constraint(equalTo: photoPerson.trailingAnchor, constant: 14)
+        ])
+        
+        mensagePerson.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            mensagePerson.topAnchor.constraint(equalTo: namePerson.bottomAnchor, constant: 6),
+            mensagePerson.leadingAnchor.constraint(equalTo: photoPerson.trailingAnchor, constant: 14)
+        ])
+        
+        hoursSend.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hoursSend.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            hoursSend.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+            hoursSend.leadingAnchor.constraint(equalTo: mensagePerson.trailingAnchor, constant: 8)
         ])
     }
     

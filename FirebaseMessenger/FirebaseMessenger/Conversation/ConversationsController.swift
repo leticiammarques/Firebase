@@ -12,78 +12,43 @@ import UIKit
 
 class ConversationsController: BaseViewController<ConversationsView> {
     
-    var tabBarCnt: UITabBarController!
+    var tabBarCnt = UITabBarController()
+    
+    let listItems : [Contact] = [
+        Contact(photo: "zoro", name: "Zorinho", mensage: "Tu não quer saber o que aconteceu com meu olho?", time: "15:29"),
+        Contact(photo: "ace", name: "Maninho", mensage: "Oh seu cabeça de vento... tá no jornal de novo?! KKKKK", time: "15:29"),
+        Contact(photo: "sanji", name: "Sanjito", mensage: "O almoço tá pronto, vem logo!", time: "15:29"),
+        Contact(photo: "usopp", name: "Best", mensage: "Saudades do Going Marry ;(", time: "15:29")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        customView.menuTabBar.delegate = self
+        
         customView.chatTableView.dataSource = self
         customView.chatTableView.delegate = self
-    }
-
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//
-//        //        validateAuth()
-//
-//    }
-    
-    func createTabBarController() {
-        tabBarCnt = UITabBarController()
-        
-        let messagesVC = self
-        messagesVC.title = "Messages"
-        messagesVC.tabBarItem = UITabBarItem.init(title: "Messages", image: UIImage.init(systemName: "bubble.right.fill"), tag: 0)
-        
-        let settingsVC = UIViewController()
-        settingsVC.title = "Settings"
-        settingsVC.view.backgroundColor = .red
-        settingsVC.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gearshape.fill"), tag: 1)
-        
-        let controllerArray = [messagesVC, settingsVC]
-        tabBarCnt.viewControllers = controllerArray.map {UINavigationController.init(rootViewController: $0)}
-//        self.view.addSubview(tabBarCnt.view)
-//        customView.menuTabBar.addSubview(tabBarCnt.view)
-    }
+    }    
 }
 
 extension ConversationsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return listItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ConversationChatCell.customCell, for: indexPath) as! ConversationChatCell
-//        cell.customImageView.image = UIImage(named: pokemon[indexPath.row])
-//        cell.titleImage.text = pokemon[indexPath.row]
-//        cell.backgroundColor = colorList[indexPath.row]
+        let model = self.listItems[indexPath.row]
+        
+        cell.photoPerson.image = UIImage(named: model.photo)
+        cell.namePerson.text = model.name
+        cell.mensagePerson.text = model.mensage
+        cell.hoursSend.text = model.time
+
         return cell
     }
-
-    
 }
 
-//class TabBarConversations: UITabBarController {
-//    
-//    let tabBarCnt = UITabBarController()
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        createTabBarController()
-//    }
-//    
-//    func createTabBarController() {
-//        let messagesVC = self
-//        messagesVC.title = "Messages"
-//        messagesVC.tabBarItem = UITabBarItem.init(title: "Messages", image: UIImage.init(systemName: "bubble.right.fill"), tag: 0)
-//        
-//        let settingsVC = self
-//        settingsVC.title = "Settings"
-//        settingsVC.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gearshape.fill"), tag: 1)
-//        
-//        let controllerArray = [messagesVC, settingsVC]
-//        self.viewControllers = controllerArray.map {UINavigationController.init(rootViewController: $0)}
-//    }
-//}
+extension ConversationsController: UITabBarDelegate {
+    
+}

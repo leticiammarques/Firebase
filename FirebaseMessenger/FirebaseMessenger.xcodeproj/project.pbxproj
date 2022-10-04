@@ -10,6 +10,7 @@
 		9F12BBB428EB4030007D655A /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB328EB4030007D655A /* SettingsController.swift */; };
 		9F12BBB628EB4064007D655A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB528EB4064007D655A /* SettingsViewModel.swift */; };
 		9F12BBB828EB4075007D655A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB728EB4075007D655A /* SettingsView.swift */; };
+		9F12BBBA28EB5F8E007D655A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB928EB5F8E007D655A /* Contact.swift */; };
 		9F45E97528D52A74006F96C0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97428D52A74006F96C0 /* BaseViewModel.swift */; };
 		9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97628D52ABF006F96C0 /* BaseViewController.swift */; };
 		9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97828D52ACB006F96C0 /* BaseView.swift */; };
@@ -43,6 +44,7 @@
 		9F12BBB328EB4030007D655A /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		9F12BBB528EB4064007D655A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		9F12BBB728EB4075007D655A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9F12BBB928EB5F8E007D655A /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		9F45E97428D52A74006F96C0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9F45E97628D52ABF006F96C0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F45E97828D52ACB006F96C0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		9F12BBBB28EB5F94007D655A /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				9F12BBB928EB5F8E007D655A /* Contact.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
 		9F45E97328D52A53006F96C0 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 		9F8E2E5B28E5EAA300D65B41 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
+				9F12BBBB28EB5F94007D655A /* Struct */,
 				9F5AFA0D28E73BFB00F03448 /* Cell */,
 				9F7C2D9B28D0B4DF00F19628 /* ConversationsViewModel.swift */,
 				9FF4FD6E28CBAF61009B78B9 /* ConversationsController.swift */,
@@ -327,6 +338,7 @@
 				9FF4FD5028CB867D009B78B9 /* FirebaseMessengerController.swift in Sources */,
 				9FF4FD4C28CB867D009B78B9 /* AppDelegate.swift in Sources */,
 				9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */,
+				9F12BBBA28EB5F8E007D655A /* Contact.swift in Sources */,
 				9FF4FD7128CBAF73009B78B9 /* ConversationsView.swift in Sources */,
 				9FF4FD6928CB8974009B78B9 /* RegisterView.swift in Sources */,
 				9FF4FD6728CB8966009B78B9 /* FirebaseMessengerView.swift in Sources */,
