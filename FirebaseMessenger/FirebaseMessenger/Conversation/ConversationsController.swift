@@ -14,11 +14,11 @@ class ConversationsController: BaseViewController<ConversationsView> {
     
     var tabBarCnt = UITabBarController()
     
-    let listItems : [Contact] = [
-        Contact(photo: "zoro", name: "Zorinho", mensage: "Tu não quer saber o que aconteceu com meu olho?", time: "15:29"),
-        Contact(photo: "ace", name: "Maninho", mensage: "Oh seu cabeça de vento... tá no jornal de novo?! KKKKK", time: "15:29"),
-        Contact(photo: "sanji", name: "Sanjito", mensage: "O almoço tá pronto, vem logo!", time: "15:29"),
-        Contact(photo: "usopp", name: "Best", mensage: "Saudades do Going Marry ;(", time: "15:29")
+    let listItems : [ContactModel] = [
+        ContactModel(photo: "zoro", name: "Zorinho", mensage: "Tu não quer saber o que aconteceu com meu olho?", time: "15:29"),
+        ContactModel(photo: "ace", name: "Maninho", mensage: "Oh seu cabeça de vento... tá no jornal de novo?! KKKKK", time: "15:29"),
+        ContactModel(photo: "sanji", name: "Sanjito", mensage: "O almoço tá pronto, vem logo!", time: "15:29"),
+        ContactModel(photo: "usopp", name: "Best", mensage: "Saudades do Going Marry ;(", time: "15:29")
     ]
     
     override func viewDidLoad() {

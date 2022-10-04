@@ -67,6 +67,15 @@ class LoginView: BaseView {
         return field
     }()
     
+    var btnForgetPasswd: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Esqueci senha", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        btn.backgroundColor = .clear
+        btn.setTitleColor(UIColor(named: "azul_aviso"), for: .normal)
+        return btn
+    }()
+    
     var btnLogin: UIButton = {
         let btn = UIButton()
         btn.setTitle("Login", for: .normal)
@@ -101,6 +110,7 @@ class LoginView: BaseView {
         self.addSubview(title)
         self.addSubview(emailField)
         self.addSubview(passwordField)
+        self.addSubview(btnForgetPasswd)
         self.addSubview(btnLogin)
         self.addSubview(imgBottom)
         
@@ -131,7 +141,7 @@ class LoginView: BaseView {
         emailField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             emailField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            emailField.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 70),
+            emailField.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 51),
             emailField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 64),
             emailField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -64),
             emailField.heightAnchor.constraint(equalToConstant: 30)
@@ -147,10 +157,19 @@ class LoginView: BaseView {
             passwordField.heightAnchor.constraint(equalToConstant: 30)
         ])
         
+        btnForgetPasswd.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            btnForgetPasswd.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            btnForgetPasswd.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 16),
+            btnForgetPasswd.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 112),
+            btnForgetPasswd.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -112),
+            btnForgetPasswd.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
         btnLogin.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             btnLogin.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            btnLogin.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 40),
+            btnLogin.topAnchor.constraint(equalTo: btnForgetPasswd.bottomAnchor, constant: 20),
             btnLogin.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             btnLogin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
             btnLogin.heightAnchor.constraint(equalToConstant: 40)

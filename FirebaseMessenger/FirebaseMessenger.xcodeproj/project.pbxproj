@@ -10,12 +10,12 @@
 		9F12BBB428EB4030007D655A /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB328EB4030007D655A /* SettingsController.swift */; };
 		9F12BBB628EB4064007D655A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB528EB4064007D655A /* SettingsViewModel.swift */; };
 		9F12BBB828EB4075007D655A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB728EB4075007D655A /* SettingsView.swift */; };
-		9F12BBBA28EB5F8E007D655A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB928EB5F8E007D655A /* Contact.swift */; };
+		9F12BBBA28EB5F8E007D655A /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12BBB928EB5F8E007D655A /* ContactModel.swift */; };
 		9F45E97528D52A74006F96C0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97428D52A74006F96C0 /* BaseViewModel.swift */; };
 		9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97628D52ABF006F96C0 /* BaseViewController.swift */; };
 		9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97828D52ACB006F96C0 /* BaseView.swift */; };
-		9F45E97D28D53090006F96C0 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97C28D53090006F96C0 /* LoginFactory.swift */; };
 		9F5AFA0F28E73C3A00F03448 /* ConversationChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5AFA0E28E73C3A00F03448 /* ConversationChatCell.swift */; };
+		9F73970228EC7B3100904FC2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F73970128EC7B3100904FC2 /* DatabaseManager.swift */; };
 		9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */; };
 		9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */; };
 		9F7C2D9A28D0B4C700F19628 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */; };
@@ -44,12 +44,12 @@
 		9F12BBB328EB4030007D655A /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		9F12BBB528EB4064007D655A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		9F12BBB728EB4075007D655A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		9F12BBB928EB5F8E007D655A /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		9F12BBB928EB5F8E007D655A /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		9F45E97428D52A74006F96C0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9F45E97628D52ABF006F96C0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F45E97828D52ACB006F96C0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		9F45E97C28D53090006F96C0 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		9F5AFA0E28E73C3A00F03448 /* ConversationChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationChatCell.swift; sourceTree = "<group>"; };
+		9F73970128EC7B3100904FC2 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessengerViewModel.swift; sourceTree = "<group>"; };
 		9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -111,12 +111,12 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		9F12BBBB28EB5F94007D655A /* Struct */ = {
+		9F12BBBB28EB5F94007D655A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9F12BBB928EB5F8E007D655A /* Contact.swift */,
+				9F12BBB928EB5F8E007D655A /* ContactModel.swift */,
 			);
-			path = Struct;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9F45E97328D52A53006F96C0 /* BaseView */ = {
@@ -137,10 +137,20 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		9F73970028EC7B1100904FC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9FF4FD4B28CB867D009B78B9 /* AppDelegate.swift */,
+				9FF4FD4D28CB867D009B78B9 /* SceneDelegate.swift */,
+				9F73970128EC7B3100904FC2 /* DatabaseManager.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9F8E2E5B28E5EAA300D65B41 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
-				9F12BBBB28EB5F94007D655A /* Struct */,
+				9F12BBBB28EB5F94007D655A /* Model */,
 				9F5AFA0D28E73BFB00F03448 /* Cell */,
 				9F7C2D9B28D0B4DF00F19628 /* ConversationsViewModel.swift */,
 				9FF4FD6E28CBAF61009B78B9 /* ConversationsController.swift */,
@@ -170,20 +180,18 @@
 		9FF4FD4A28CB867D009B78B9 /* FirebaseMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				9F12BBB228EB4014007D655A /* Settings */,
 				9F45E97328D52A53006F96C0 /* BaseView */,
 				9F8E2E5B28E5EAA300D65B41 /* Conversation */,
 				9FF4FD6128CB88D1009B78B9 /* FirebaseMessenger */,
 				9FF4FD6028CB8853009B78B9 /* Login */,
 				9FF4FD5F28CB8713009B78B9 /* Register */,
-				9FF4FD4B28CB867D009B78B9 /* AppDelegate.swift */,
-				9FF4FD4D28CB867D009B78B9 /* SceneDelegate.swift */,
+				9F73970028EC7B1100904FC2 /* Resources */,
+				9F12BBB228EB4014007D655A /* Settings */,
 				9FF4FD5128CB867D009B78B9 /* Main.storyboard */,
 				9FF4FD5428CB8682009B78B9 /* Assets.xcassets */,
 				9FF4FD5628CB8683009B78B9 /* LaunchScreen.storyboard */,
 				9FF4FD5928CB8683009B78B9 /* Info.plist */,
 				9FF4FD6C28CB8BC0009B78B9 /* GoogleService-Info.plist */,
-				9F45E97C28D53090006F96C0 /* LoginFactory.swift */,
 			);
 			path = FirebaseMessenger;
 			sourceTree = "<group>";
@@ -338,10 +346,11 @@
 				9FF4FD5028CB867D009B78B9 /* FirebaseMessengerController.swift in Sources */,
 				9FF4FD4C28CB867D009B78B9 /* AppDelegate.swift in Sources */,
 				9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */,
-				9F12BBBA28EB5F8E007D655A /* Contact.swift in Sources */,
+				9F12BBBA28EB5F8E007D655A /* ContactModel.swift in Sources */,
 				9FF4FD7128CBAF73009B78B9 /* ConversationsView.swift in Sources */,
 				9FF4FD6928CB8974009B78B9 /* RegisterView.swift in Sources */,
 				9FF4FD6728CB8966009B78B9 /* FirebaseMessengerView.swift in Sources */,
+				9F73970228EC7B3100904FC2 /* DatabaseManager.swift in Sources */,
 				9FF4FD4E28CB867D009B78B9 /* SceneDelegate.swift in Sources */,
 				9F5AFA0F28E73C3A00F03448 /* ConversationChatCell.swift in Sources */,
 				9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */,
@@ -350,7 +359,6 @@
 				9FF4FD6B28CB8983009B78B9 /* LoginView.swift in Sources */,
 				9F45E97528D52A74006F96C0 /* BaseViewModel.swift in Sources */,
 				9FF4FD6F28CBAF61009B78B9 /* ConversationsController.swift in Sources */,
-				9F45E97D28D53090006F96C0 /* LoginFactory.swift in Sources */,
 				9F12BBB428EB4030007D655A /* SettingsController.swift in Sources */,
 				9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */,
 				9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */,

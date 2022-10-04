@@ -12,10 +12,6 @@ import RxCocoa
 import RxRelay
 
 protocol RegisterProtocol {
-    func openErrorUserCreated(controller: UIViewController)
-    func openErrorPassword(controller: UIViewController)
-    func openErrorBlanked(controller: UIViewController)
-    func finishRegister(controller: UIViewController)
     func registerFirebase(name:String, secondName: String, email: String, password: String, confirmPassword: String)
     var clickRegisterObserver: Observable<Bool> { get }
     var isEmptyObserver: Observable<Bool> { get }
@@ -68,28 +64,33 @@ class RegisterController: BaseViewController<RegisterView> {
         
         self.viewModel.clickRegisterObserver.subscribe(onNext: { value in
             if(value) {
-                self.viewModel.finishRegister(controller: self)
-            }
+                let viewModel = ConversationsViewModel()
+                let controllerConversation = ConversationsController(viewModel: viewModel)
+                self.navigationController?.pushViewController(controllerConversation, animated: true)            }
         }).disposed(by: disposeBag)
         
         self.viewModel.validateDataObserver.subscribe(onNext: { value in
             if(value) {
-                self.viewModel.openErrorUserCreated(controller: self)
+                let alert = UIAlertController(title: "Oooopa", message: "Constamos um cadastro já realizado pra esse usuário. Tente logar para acessar o PreviLegius.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
         }).disposed(by: disposeBag)
         
         self.viewModel.isEmptyObserver.subscribe(onNext: { value in
             if (value) {
-                self.viewModel.openErrorBlanked(controller: self)
+                let alert = UIAlertController(title: "Oooopa", message: "Por favor, insira todas as informações para fazer login.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
         }).disposed(by: disposeBag)
         
         self.viewModel.confirmPassword.subscribe(onNext: {value in
             if(value) {
-                self.viewModel.openErrorPassword(controller: self)
+                let alert = UIAlertController(title: "Oooopa", message: "Senhas não compatíveis!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
         }).disposed(by: disposeBag)
-        
     }
-    
 }
