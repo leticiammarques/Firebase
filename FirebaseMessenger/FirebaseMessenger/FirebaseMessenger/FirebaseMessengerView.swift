@@ -19,7 +19,7 @@ class FirebaseMessengerView: BaseView {
     
     var txtTitle: UILabel = {
         let txt = UILabel()
-        txt.text = "PrivieLegius"
+        txt.text = PriviLegiusLocalized.titleApp
         txt.font = UIFont.boldSystemFont(ofSize: 26)
         txt.numberOfLines = 0
         txt.textColor = .black
@@ -34,7 +34,7 @@ class FirebaseMessengerView: BaseView {
     
     var btnLogin: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Login", for: .normal)
+        btn.setTitle(PriviLegiusLocalized.btnLogin, for: .normal)
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         btn.setTitleColor(UIColor.black, for: .normal)
@@ -47,7 +47,7 @@ class FirebaseMessengerView: BaseView {
     
     var btnCadastro: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Cadastro", for: .normal)
+        btn.setTitle(PriviLegiusLocalized.btnRegister, for: .normal)
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         btn.setTitleColor(UIColor.black, for: .normal)

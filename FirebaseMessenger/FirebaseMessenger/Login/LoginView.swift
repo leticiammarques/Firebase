@@ -25,7 +25,7 @@ class LoginView: BaseView {
     
     var title: UILabel = {
         let tl = UILabel()
-        tl.text = "PrivieLegius"
+        tl.text = PriviLegiusLocalized.titleApp
         tl.font = UIFont.boldSystemFont(ofSize: 26)
         tl.textColor = .black
         tl.numberOfLines = 0
@@ -41,7 +41,7 @@ class LoginView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.attributedPlaceholder = NSAttributedString(string: PriviLegiusLocalized.email, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
@@ -58,7 +58,7 @@ class LoginView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.attributedPlaceholder = NSAttributedString(string: PriviLegiusLocalized.passwd, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
@@ -69,7 +69,7 @@ class LoginView: BaseView {
     
     var btnForgetPasswd: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Esqueci senha", for: .normal)
+        btn.setTitle(PriviLegiusLocalized.forgetPasswd, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         btn.backgroundColor = .clear
         btn.setTitleColor(UIColor(named: "azul_aviso"), for: .normal)
@@ -78,7 +78,7 @@ class LoginView: BaseView {
     
     var btnLogin: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Login", for: .normal)
+        btn.setTitle(PriviLegiusLocalized.btnLogin, for: .normal)
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         btn.backgroundColor = UIColor(named: "rosa")

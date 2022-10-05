@@ -15,6 +15,9 @@
 		9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97628D52ABF006F96C0 /* BaseViewController.swift */; };
 		9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E97828D52ACB006F96C0 /* BaseView.swift */; };
 		9F5AFA0F28E73C3A00F03448 /* ConversationChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5AFA0E28E73C3A00F03448 /* ConversationChatCell.swift */; };
+		9F72B46628EDC58700A4CDE6 /* PriviLegius(English).strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F72B46528EDC58700A4CDE6 /* PriviLegius(English).strings */; };
+		9F72B46828EDC60000A4CDE6 /* PriviLegius(Portuguese).strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F72B46728EDC5FF00A4CDE6 /* PriviLegius(Portuguese).strings */; };
+		9F72B46A28EDC6A600A4CDE6 /* PriviLegiusLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B46928EDC6A600A4CDE6 /* PriviLegiusLocalized.swift */; };
 		9F73970228EC7B3100904FC2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F73970128EC7B3100904FC2 /* DatabaseManager.swift */; };
 		9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */; };
 		9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */; };
@@ -49,6 +52,9 @@
 		9F45E97628D52ABF006F96C0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F45E97828D52ACB006F96C0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9F5AFA0E28E73C3A00F03448 /* ConversationChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationChatCell.swift; sourceTree = "<group>"; };
+		9F72B46528EDC58700A4CDE6 /* PriviLegius(English).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "PriviLegius(English).strings"; sourceTree = "<group>"; };
+		9F72B46728EDC5FF00A4CDE6 /* PriviLegius(Portuguese).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "PriviLegius(Portuguese).strings"; sourceTree = "<group>"; };
+		9F72B46928EDC6A600A4CDE6 /* PriviLegiusLocalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriviLegiusLocalized.swift; sourceTree = "<group>"; };
 		9F73970128EC7B3100904FC2 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessengerViewModel.swift; sourceTree = "<group>"; };
 		9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +149,9 @@
 				9FF4FD4B28CB867D009B78B9 /* AppDelegate.swift */,
 				9FF4FD4D28CB867D009B78B9 /* SceneDelegate.swift */,
 				9F73970128EC7B3100904FC2 /* DatabaseManager.swift */,
+				9F72B46928EDC6A600A4CDE6 /* PriviLegiusLocalized.swift */,
+				9F72B46528EDC58700A4CDE6 /* PriviLegius(English).strings */,
+				9F72B46728EDC5FF00A4CDE6 /* PriviLegius(Portuguese).strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,9 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF4FD5828CB8683009B78B9 /* LaunchScreen.storyboard in Resources */,
+				9F72B46828EDC60000A4CDE6 /* PriviLegius(Portuguese).strings in Resources */,
 				9FF4FD5528CB8682009B78B9 /* Assets.xcassets in Resources */,
 				9FF4FD6D28CB8BC0009B78B9 /* GoogleService-Info.plist in Resources */,
 				9FF4FD5328CB867D009B78B9 /* Main.storyboard in Resources */,
+				9F72B46628EDC58700A4CDE6 /* PriviLegius(English).strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +369,7 @@
 				9F7C2D9C28D0B4DF00F19628 /* ConversationsViewModel.swift in Sources */,
 				9FF4FD6B28CB8983009B78B9 /* LoginView.swift in Sources */,
 				9F45E97528D52A74006F96C0 /* BaseViewModel.swift in Sources */,
+				9F72B46A28EDC6A600A4CDE6 /* PriviLegiusLocalized.swift in Sources */,
 				9FF4FD6F28CBAF61009B78B9 /* ConversationsController.swift in Sources */,
 				9F12BBB428EB4030007D655A /* SettingsController.swift in Sources */,
 				9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */,

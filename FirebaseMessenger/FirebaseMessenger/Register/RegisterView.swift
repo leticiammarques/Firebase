@@ -32,7 +32,7 @@ class RegisterView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Nome", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.attributedPlaceholder = NSAttributedString(string: PriviLegiusLocalized.name, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
@@ -49,7 +49,7 @@ class RegisterView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Sobrenome", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.attributedPlaceholder = NSAttributedString(string: PriviLegiusLocalized.lastName, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
@@ -66,7 +66,7 @@ class RegisterView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.attributedPlaceholder = NSAttributedString(string: PriviLegiusLocalized.email, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
@@ -83,7 +83,7 @@ class RegisterView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.attributedPlaceholder = NSAttributedString(string: PriviLegiusLocalized.passwd, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
@@ -101,7 +101,7 @@ class RegisterView: BaseView {
         field.layer.cornerRadius = 5
         field.layer.borderWidth = 2
         field.layer.borderColor = UIColor.black.cgColor
-        field.attributedPlaceholder = NSAttributedString(string: "Confirme a senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        field.attributedPlaceholder = NSAttributedString(string: PriviLegiusLocalized.confirmPasswd, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         field.textColor = .black
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.leftViewMode = .always
@@ -112,7 +112,7 @@ class RegisterView: BaseView {
     
     var registerButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Cadastro", for: .normal)
+        btn.setTitle(PriviLegiusLocalized.btnRegister, for: .normal)
         btn.setTitleColor(UIColor.black, for: .normal)
 //        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)

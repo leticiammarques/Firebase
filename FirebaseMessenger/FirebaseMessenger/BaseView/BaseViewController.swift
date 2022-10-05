@@ -70,6 +70,12 @@ class BaseViewController<CustomView: UIView>: UIViewController {
 }
 
 extension BaseViewController {
+    
+    func openModalSimple(title: String, body: String, titleBtn: String) {
+        let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: titleBtn, style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
 
     private func removeBackButtonTitle() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

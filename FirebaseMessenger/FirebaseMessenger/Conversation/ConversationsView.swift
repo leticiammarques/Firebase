@@ -48,7 +48,7 @@ class ConversationsView: BaseView {
     
     var titleStatus: UILabel = {
         let title = UILabel()
-        title.text = "Online"
+        title.text = PriviLegiusLocalized.online
         title.font = UIFont.boldSystemFont(ofSize: 12)
         title.textColor = UIColor(named: "status")
         title.numberOfLines = 0
@@ -63,7 +63,7 @@ class ConversationsView: BaseView {
     
     var menuTabBar: UITabBar = {
         var tab = UITabBar()
-        tab.setItems([UITabBarItem.init(title: "Messages", image: UIImage.init(systemName: "bubble.right.fill"), tag: 0), UITabBarItem.init(title: "New Message", image: UIImage.init(systemName: "plus.bubble.fill"), tag: 1), UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gearshape.fill"), tag: 2)], animated: true)
+        tab.setItems([UITabBarItem.init(title: PriviLegiusLocalized.menssage, image: UIImage.init(systemName: "bubble.right.fill"), tag: 0), UITabBarItem.init(title: PriviLegiusLocalized.newMenssage, image: UIImage.init(systemName: "plus.bubble.fill"), tag: 1), UITabBarItem.init(title: PriviLegiusLocalized.settings, image: UIImage.init(systemName: "gearshape.fill"), tag: 2)], animated: true)
         return tab
     }()
     

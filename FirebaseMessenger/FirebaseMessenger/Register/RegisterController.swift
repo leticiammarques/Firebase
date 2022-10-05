@@ -71,26 +71,21 @@ class RegisterController: BaseViewController<RegisterView> {
         
         self.viewModel.validateDataObserver.subscribe(onNext: { value in
             if(value) {
-                let alert = UIAlertController(title: "Oooopa", message: "Constamos um cadastro já realizado pra esse usuário. Tente logar para acessar o PreviLegius.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                self.openModalSimple(title: PriviLegiusLocalized.ops, body: PriviLegiusLocalized.registerExists, titleBtn: PriviLegiusLocalized.back)
             }
         }).disposed(by: disposeBag)
         
         self.viewModel.isEmptyObserver.subscribe(onNext: { value in
             if (value) {
-                let alert = UIAlertController(title: "Oooopa", message: "Por favor, insira todas as informações para fazer login.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                self.openModalSimple(title: PriviLegiusLocalized.ops, body: PriviLegiusLocalized.allInformationsRegister, titleBtn: PriviLegiusLocalized.back)
             }
         }).disposed(by: disposeBag)
         
         self.viewModel.confirmPassword.subscribe(onNext: {value in
             if(value) {
-                let alert = UIAlertController(title: "Oooopa", message: "Senhas não compatíveis!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                self.openModalSimple(title: PriviLegiusLocalized.ops, body: PriviLegiusLocalized.noMatchPasswd, titleBtn: PriviLegiusLocalized.back)
             }
         }).disposed(by: disposeBag)
     }
 }
+

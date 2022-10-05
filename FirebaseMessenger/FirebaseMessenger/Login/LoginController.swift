@@ -72,9 +72,7 @@ class LoginController: BaseViewController<LoginView> {
         self.viewModel.dataIsEmpty.subscribe(onNext: { value in
             
             if(value) {
-                let alert = UIAlertController(title: "Oooopa", message: "Por favor, insira todas as informações para fazer login.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                self.openModalSimple(title: PriviLegiusLocalized.ops, body: PriviLegiusLocalized.allInformationsLogin, titleBtn: PriviLegiusLocalized.back)
             }
             
         }).disposed(by: disposeBag)
@@ -82,9 +80,7 @@ class LoginController: BaseViewController<LoginView> {
         self.viewModel.valitedData.subscribe(onNext: { value in
             
             if (value) {
-                let alert = UIAlertController(title: "Oooopa", message: "Email e/ou senha incorretos", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                self.openModalSimple(title: PriviLegiusLocalized.ops, body: PriviLegiusLocalized.errorLogin, titleBtn: PriviLegiusLocalized.back)
             }
             
         }).disposed(by: disposeBag)
