@@ -14,7 +14,7 @@ final class PriviLegiusLocalized: NSObject {
 }
 
 extension PriviLegiusLocalized {
-    static private var table: String { "PriviLegius(English)" }
+    static private var table: String { "PriviLegius" }
 
     
     /// Titulo `PrivieLegius` do app

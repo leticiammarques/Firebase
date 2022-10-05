@@ -1,0 +1,41 @@
+/* 
+  PriviLegius(Portuguese).strings
+  PriviLegius
+
+  Created by leticia marques on 05/10/22.
+  
+*/
+
+//Geral
+"titleApp" = "PivieLegius";
+"btnLogin" = "Login";
+"btnRegister" = "Cadastro";
+
+//Login
+
+"email" = "Email";
+"passwd" = "Senha";
+"forgetPasswd" = "Esqueci senha";
+
+// Cadastro
+
+"name" = "Nome";
+"lastName" = "Sobrenome";
+"confirmPasswd" = "Confirmar senha";
+
+// Conversation
+
+"online" = "Online";
+"menssage" = "Mensagens";
+"settings" = "Configurações";
+"newMenssage" = "Nova Mensagem";
+
+// Alertas
+
+"ops" = "Oooopa";
+"allInformationsRegister" = "Por favor, insira todas as informações para fazer o cadastro.";
+"back" = "Voltar";
+"registerExists" = "Constamos um cadastro já realizado pra esse usuário. Tente logar para acessar o PreviLegius.";
+"noMatchPasswd" = "Senhas não compatíveis!";
+"errorLogin" = "Email e/ou senha incorretos";
+"allInformationsLogin" = "Por favor, insira todas as informações para fazer login.";
