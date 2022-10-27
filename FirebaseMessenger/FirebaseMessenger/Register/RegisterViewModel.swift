@@ -25,14 +25,14 @@ class RegisterViewModel: BaseViewModel {
             return
         }
         
+        guard passwd == confirmPasswd else {
+            print("Senhas não são compatíveis")
+            self.verificatedPasswordRelay.accept(true)
+            return
+        }
+        
         DatabaseManager.shared.userExists(with: email, completion: { [weak self] exist in
-            
-            guard passwd == confirmPasswd else {
-                print("Senhas não são compatíveis")
-                self?.verificatedPasswordRelay.accept(true)
-                return
-            }
-            
+
             guard !exist else {
                 print("usuário existe")
                 self?.dataVerificatedRelay.accept(true)

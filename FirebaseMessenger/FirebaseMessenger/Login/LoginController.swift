@@ -13,7 +13,10 @@ import RxRelay
 
 protocol LoginProtocol {
     func loginInFirebase(email: String, senha: String)
+    func clickForgetPassword()
+//    func dismiss()
     var clickLoginObserver: Observable<Bool> { get }
+    var clickForgetPasswdObserver: Observable<Bool> { get }
     var dataIsEmpty: Observable<Bool> { get }
     var valitedData: Observable<Bool> { get }
 }
@@ -65,6 +68,22 @@ class LoginController: BaseViewController<LoginView> {
                 let viewModel = ConversationsViewModel()
                 let controllerConversation = ConversationsController(viewModel: viewModel)
                 self.navigationController?.pushViewController(controllerConversation, animated: true)
+            }
+            
+        }).disposed(by: disposeBag)
+        
+        self.customView.btnForgetPasswd.rx.tap.bind { [weak self] in
+            
+            self?.viewModel.clickForgetPassword()
+            
+        }.disposed(by: disposeBag)
+        
+        self.viewModel.clickForgetPasswdObserver.subscribe(onNext: { value in
+            
+            if(value) {
+                let viewModel = ConfirmEmailViewModel()
+                let controller = ConfirmEmailController(viewModel: viewModel)
+                self.navigationController?.pushViewController(controller, animated: true)
             }
             
         }).disposed(by: disposeBag)

@@ -17,7 +17,15 @@
 		9F5AFA0F28E73C3A00F03448 /* ConversationChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5AFA0E28E73C3A00F03448 /* ConversationChatCell.swift */; };
 		9F72B46A28EDC6A600A4CDE6 /* PriviLegiusLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B46928EDC6A600A4CDE6 /* PriviLegiusLocalized.swift */; };
 		9F72B47828EDEAC000A4CDE6 /* PriviLegius.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F72B47A28EDEAC000A4CDE6 /* PriviLegius.strings */; };
+		9F72B48428EE019100A4CDE6 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B48328EE019100A4CDE6 /* ChatController.swift */; };
+		9F72B48628EE019F00A4CDE6 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B48528EE019F00A4CDE6 /* ChatView.swift */; };
+		9F72B48828EE01AB00A4CDE6 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B48728EE01AB00A4CDE6 /* ChatViewModel.swift */; };
 		9F73970228EC7B3100904FC2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F73970128EC7B3100904FC2 /* DatabaseManager.swift */; };
+		9F76B97128EF1E5000BDD60E /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76B97028EF1E4F00BDD60E /* TabbarView.swift */; };
+		9F76B97528EF469500BDD60E /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76B97428EF469500BDD60E /* TabbarController.swift */; };
+		9F774FD328F9C89200140B45 /* ConfirmEmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F774FD228F9C89200140B45 /* ConfirmEmailController.swift */; };
+		9F774FD528F9C8A300140B45 /* ConfirmEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F774FD428F9C8A300140B45 /* ConfirmEmailViewModel.swift */; };
+		9F774FD728F9C8B000140B45 /* ConfirmEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F774FD628F9C8B000140B45 /* ConfirmEmailView.swift */; };
 		9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */; };
 		9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */; };
 		9F7C2D9A28D0B4C700F19628 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */; };
@@ -56,7 +64,15 @@
 		9F72B47E28EDEC4C00A4CDE6 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		9F72B47F28EDEC4C00A4CDE6 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9F72B48028EDEC4D00A4CDE6 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/PriviLegius.strings"; sourceTree = "<group>"; };
+		9F72B48328EE019100A4CDE6 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		9F72B48528EE019F00A4CDE6 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		9F72B48728EE01AB00A4CDE6 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		9F73970128EC7B3100904FC2 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		9F76B97028EF1E4F00BDD60E /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		9F76B97428EF469500BDD60E /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		9F774FD228F9C89200140B45 /* ConfirmEmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailController.swift; sourceTree = "<group>"; };
+		9F774FD428F9C8A300140B45 /* ConfirmEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewModel.swift; sourceTree = "<group>"; };
+		9F774FD628F9C8B000140B45 /* ConfirmEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailView.swift; sourceTree = "<group>"; };
 		9F7C2D9528D0B44B00F19628 /* FirebaseMessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessengerViewModel.swift; sourceTree = "<group>"; };
 		9F7C2D9728D0B4A000F19628 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		9F7C2D9928D0B4C700F19628 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +160,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		9F72B48228EE017900A4CDE6 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				9F72B48728EE01AB00A4CDE6 /* ChatViewModel.swift */,
+				9F72B48328EE019100A4CDE6 /* ChatController.swift */,
+				9F72B48528EE019F00A4CDE6 /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		9F73970028EC7B1100904FC2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +180,25 @@
 				9F72B47A28EDEAC000A4CDE6 /* PriviLegius.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F76B96D28EF1D5500BDD60E /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				9F76B97028EF1E4F00BDD60E /* TabbarView.swift */,
+				9F76B97428EF469500BDD60E /* TabbarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		9F774FCB28F9C6BD00140B45 /* ConfirmEmail */ = {
+			isa = PBXGroup;
+			children = (
+				9F774FD228F9C89200140B45 /* ConfirmEmailController.swift */,
+				9F774FD428F9C8A300140B45 /* ConfirmEmailViewModel.swift */,
+				9F774FD628F9C8B000140B45 /* ConfirmEmailView.swift */,
+			);
+			path = ConfirmEmail;
 			sourceTree = "<group>";
 		};
 		9F8E2E5B28E5EAA300D65B41 /* Conversation */ = {
@@ -189,7 +234,10 @@
 		9FF4FD4A28CB867D009B78B9 /* FirebaseMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				9F774FCB28F9C6BD00140B45 /* ConfirmEmail */,
+				9F76B96D28EF1D5500BDD60E /* Tabbar */,
 				9F45E97328D52A53006F96C0 /* BaseView */,
+				9F72B48228EE017900A4CDE6 /* Chat */,
 				9F8E2E5B28E5EAA300D65B41 /* Conversation */,
 				9FF4FD6128CB88D1009B78B9 /* FirebaseMessenger */,
 				9FF4FD6028CB8853009B78B9 /* Login */,
@@ -353,19 +401,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F774FD528F9C8A300140B45 /* ConfirmEmailViewModel.swift in Sources */,
 				9FF4FD6328CB8946009B78B9 /* RegisterController.swift in Sources */,
 				9FF4FD5028CB867D009B78B9 /* FirebaseMessengerController.swift in Sources */,
 				9FF4FD4C28CB867D009B78B9 /* AppDelegate.swift in Sources */,
 				9F45E97928D52ACB006F96C0 /* BaseView.swift in Sources */,
 				9F12BBBA28EB5F8E007D655A /* ContactModel.swift in Sources */,
 				9FF4FD7128CBAF73009B78B9 /* ConversationsView.swift in Sources */,
+				9F72B48628EE019F00A4CDE6 /* ChatView.swift in Sources */,
+				9F72B48828EE01AB00A4CDE6 /* ChatViewModel.swift in Sources */,
 				9FF4FD6928CB8974009B78B9 /* RegisterView.swift in Sources */,
 				9FF4FD6728CB8966009B78B9 /* FirebaseMessengerView.swift in Sources */,
+				9F774FD728F9C8B000140B45 /* ConfirmEmailView.swift in Sources */,
 				9F73970228EC7B3100904FC2 /* DatabaseManager.swift in Sources */,
 				9FF4FD4E28CB867D009B78B9 /* SceneDelegate.swift in Sources */,
 				9F5AFA0F28E73C3A00F03448 /* ConversationChatCell.swift in Sources */,
 				9F7C2D9828D0B4A000F19628 /* RegisterViewModel.swift in Sources */,
 				9F7C2D9A28D0B4C700F19628 /* LoginViewModel.swift in Sources */,
+				9F72B48428EE019100A4CDE6 /* ChatController.swift in Sources */,
+				9F76B97128EF1E5000BDD60E /* TabbarView.swift in Sources */,
 				9F7C2D9C28D0B4DF00F19628 /* ConversationsViewModel.swift in Sources */,
 				9FF4FD6B28CB8983009B78B9 /* LoginView.swift in Sources */,
 				9F45E97528D52A74006F96C0 /* BaseViewModel.swift in Sources */,
@@ -373,6 +427,8 @@
 				9FF4FD6F28CBAF61009B78B9 /* ConversationsController.swift in Sources */,
 				9F12BBB428EB4030007D655A /* SettingsController.swift in Sources */,
 				9F45E97728D52ABF006F96C0 /* BaseViewController.swift in Sources */,
+				9F76B97528EF469500BDD60E /* TabbarController.swift in Sources */,
+				9F774FD328F9C89200140B45 /* ConfirmEmailController.swift in Sources */,
 				9F7C2D9628D0B44B00F19628 /* FirebaseMessengerViewModel.swift in Sources */,
 				9FF4FD6528CB8953009B78B9 /* LoginController.swift in Sources */,
 				9F12BBB628EB4064007D655A /* SettingsViewModel.swift in Sources */,

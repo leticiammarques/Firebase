@@ -79,7 +79,6 @@ class LoginView: BaseView {
     var btnLogin: UIButton = {
         let btn = UIButton()
         btn.setTitle(PriviLegiusLocalized.btnLogin, for: .normal)
-//        btn.titleLabel?.font = UIFont(name: "Roboto", size: 12)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         btn.backgroundColor = UIColor(named: "rosa")
         btn.setTitleColor(UIColor.black, for: .normal)

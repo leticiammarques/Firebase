@@ -30,6 +30,11 @@
 "settings" = "Settings";
 "newMenssage" = "New Menssage";
 
+// ConfirmEmail
+
+"confirmEmail" = "Antes, precisamos conferir seu email...";
+"btnConfirm" = "Confirmar";
+
 // Alertas
 
 "ops" = "Oooops";
@@ -39,3 +44,7 @@
 "noMatchPasswd" = "Incompatible passwords";
 "errorLogin" = "Incorrect email and/or password";
 "allInformationsLogin" = "Please enter all information to login.";
+"sucess" = "Concluido!";
+"txtFieldVerifyEmailIsEmpty" = "Precisamos que informe seu email para a recuperação da sua senha. É rapidinho!";
+"verifyEmail" = "Verifique sua caixa de email, para a alteração da sua senha. Não esqueça de olhar na caixa de Spam também ;)";
+"emailNoVerify" = "Seu email não consta no nosso banco de dados. Realize o cadastro para ter acesso ao chat!";

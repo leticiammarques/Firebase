@@ -15,6 +15,7 @@ import RxSwift
 class LoginViewModel: BaseViewModel {
     
     private let clickLoginRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    private let clickForgetPasswordRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     private let verificatedCampsRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     private let verificatedDataRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
@@ -40,16 +41,29 @@ class LoginViewModel: BaseViewModel {
             self?.clickLoginRelay.accept(true)
         })
     }
+    
+    
+    func openForgetPassword() {
+        self.clickForgetPasswordRelay.accept(true)
+    }
 }
 
-extension LoginViewModel: LoginProtocol {
+extension LoginViewModel: LoginProtocol {    
     
     func loginInFirebase(email: String, senha: String) {
         self.loginUser(email: email, senha: senha)
     }
     
+    func clickForgetPassword() {
+        self.openForgetPassword()
+    }
+    
     var clickLoginObserver: Observable<Bool> {
         return clickLoginRelay.asObservable()
+    }
+    
+    var clickForgetPasswdObserver: Observable<Bool> {
+        return clickForgetPasswordRelay.asObservable()
     }
     
     var valitedData: Observable<Bool> {

@@ -25,18 +25,17 @@ extension DatabaseManager {
         safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
         
         database.child(safeEmail).observeSingleEvent(of: .value, with: { snapshot in
-            guard snapshot.value as? String != nil else {
-                print("teste \(completion(false))")
-                completion(false)
+            
+            if snapshot.exists(){
+                completion(true)
                 return
             }
-            print("teste \(completion(true))")
-            completion(true)
+            completion(false)
         })
     }
     
     public func insertUser(with user: ChatAppUser) {
-        database.child(user.firstName).setValue([
+        database.child(user.safeEmail).setValue([
             "first_name": user.firstName,
             "last_name": user.lastName,
             "email_adress": user.emailAddress,

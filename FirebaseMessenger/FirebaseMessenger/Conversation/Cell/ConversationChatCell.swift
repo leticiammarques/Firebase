@@ -99,7 +99,7 @@ class ConversationChatCell: UITableViewCell {
         mensagePerson.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mensagePerson.topAnchor.constraint(equalTo: namePerson.bottomAnchor, constant: 6),
-            mensagePerson.leadingAnchor.constraint(equalTo: photoPerson.trailingAnchor, constant: 14)
+            mensagePerson.leadingAnchor.constraint(equalTo: namePerson.leadingAnchor)
         ])
         
         hoursSend.translatesAutoresizingMaskIntoConstraints = false

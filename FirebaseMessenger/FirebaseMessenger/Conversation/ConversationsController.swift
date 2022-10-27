@@ -11,20 +11,19 @@ import RxSwift
 import UIKit
 
 class ConversationsController: BaseViewController<ConversationsView> {
-    
-    var tabBarCnt = UITabBarController()
-    
+
     let listItems : [ContactModel] = [
         ContactModel(photo: "zoro", name: "Zorinho", mensage: "Tu não quer saber o que aconteceu com meu olho?", time: "15:29"),
         ContactModel(photo: "ace", name: "Maninho", mensage: "Oh seu cabeça de vento... tá no jornal de novo?! KKKKK", time: "15:29"),
         ContactModel(photo: "sanji", name: "Sanjito", mensage: "O almoço tá pronto, vem logo!", time: "15:29"),
         ContactModel(photo: "usopp", name: "Best", mensage: "Saudades do Going Marry ;(", time: "15:29")
     ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customView.menuTabBar.delegate = self
+        customView.tabbar.menuTabBar.delegate = self
+        customView.tabbar.menuTabBar.tag = 0
         
         customView.chatTableView.dataSource = self
         customView.chatTableView.delegate = self
@@ -47,8 +46,30 @@ extension ConversationsController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let model = self.listItems[indexPath.row]
+//        let chat = ContactModel(photo: model.photo, name: model.name, mensage: model.mensage, time: model.time)
+//        
+//        let controllerChat = ChatController(coder: NSCoder)
+//        self.navigationController?.pushViewController(controllerChat, animated: true)
+//        
+    }
 }
 
 extension ConversationsController: UITabBarDelegate {
-    
+
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+
+        if item.title == PriviLegiusLocalized.settings {
+            let viewModel = SettingsViewModel()
+            let controller = SettingsController(viewModel: viewModel)
+            self.navigationController?.pushViewController(controller, animated: true)
+            self.navigationController?.dismiss(animated: true)
+
+        } else if item.title == PriviLegiusLocalized.newMenssage {
+            print("Nova mensagem")
+
+        }
+    }
 }

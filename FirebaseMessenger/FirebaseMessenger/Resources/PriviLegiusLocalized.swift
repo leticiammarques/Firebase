@@ -85,6 +85,16 @@ extension PriviLegiusLocalized {
         return NSLocalizedString("newMenssage", tableName: table, bundle: bundle, comment: "")
     }
     
+    /// Descrição `Antes, precisamos conferir seu email...` do confirmar email
+    static var confirmEmail: String {
+        return NSLocalizedString("confirmEmail", tableName: table, bundle: bundle, comment: "")
+    }
+    
+    /// Titulo `Confirmar` do botão de confirmar email
+    static var btnConfirm: String {
+        return NSLocalizedString("btnConfirm", tableName: table, bundle: bundle, comment: "")
+    }
+    
     /// Titulo `Ooooopa` dos alertas
     static var ops: String {
         return NSLocalizedString("ops", tableName: table, bundle: bundle, comment: "")
@@ -118,5 +128,25 @@ extension PriviLegiusLocalized {
     /// Corpo `Por favor, insira todas as informações para fazer login.` do alerta
     static var allInformationsLogin: String {
         return NSLocalizedString("allInformationsLogin", tableName: table, bundle: bundle, comment: "")
+    }
+    
+    /// Titulo `Concluido!` dos alertas
+    static var sucess: String {
+        return NSLocalizedString("sucess", tableName: table, bundle: bundle, comment: "")
+    }
+    
+    /// Corpo `Precisamos que informe seu email para a recuperação da sua senha. É rapidinho!` do alerta
+    static var txtFieldVerifyEmailIsEmpty: String {
+        return NSLocalizedString("txtFieldVerifyEmailIsEmpty", tableName: table, bundle: bundle, comment: "")
+    }
+    
+    /// Corpo `Verifique sua caixa de email, para a alteração da sua senha. Não esqueça de olhar na caixa de Spam também ;)` do alerta
+    static var verifyEmail: String {
+        return NSLocalizedString("verifyEmail", tableName: table, bundle: bundle, comment: "")
+    }
+    
+    /// Corpo `"Seu email não consta no nosso banco de dados. Realize o cadastro para ter acesso ao chat!"` do alerta
+    static var emailNoVerify: String {
+        return NSLocalizedString("emailNoVerify", tableName: table, bundle: bundle, comment: "")
     }
 }

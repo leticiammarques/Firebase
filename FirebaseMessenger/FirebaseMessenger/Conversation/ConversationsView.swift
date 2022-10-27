@@ -61,9 +61,14 @@ class ConversationsView: BaseView {
         return chat
     }()
     
-    var menuTabBar: UITabBar = {
-        var tab = UITabBar()
-        tab.setItems([UITabBarItem.init(title: PriviLegiusLocalized.menssage, image: UIImage.init(systemName: "bubble.right.fill"), tag: 0), UITabBarItem.init(title: PriviLegiusLocalized.newMenssage, image: UIImage.init(systemName: "plus.bubble.fill"), tag: 1), UITabBarItem.init(title: PriviLegiusLocalized.settings, image: UIImage.init(systemName: "gearshape.fill"), tag: 2)], animated: true)
+//    var menuTabBar: UITabBar = {
+//        var tab = UITabBar()
+//        tab.setItems([UITabBarItem.init(title: PriviLegiusLocalized.menssage, image: UIImage.init(systemName: "bubble.right.fill"), tag: 0), UITabBarItem.init(title: PriviLegiusLocalized.newMenssage, image: UIImage.init(systemName: "plus.bubble.fill"), tag: 1), UITabBarItem.init(title: PriviLegiusLocalized.settings, image: UIImage.init(systemName: "gearshape.fill"), tag: 2)], animated: true)
+//        return tab
+//    }()
+    
+    var tabbar: TabbarView = {
+        let tab = TabbarView()
         return tab
     }()
     
@@ -83,8 +88,8 @@ class ConversationsView: BaseView {
         viewUser.addSubview(viewStatus)
         viewUser.addSubview(titleStatus)
         self.addSubview(chatTableView)
-        self.addSubview(menuTabBar)
-        
+        self.addSubview(tabbar)
+
         self.backgroundColor = .white
         
         
@@ -93,20 +98,20 @@ class ConversationsView: BaseView {
             viewUser.topAnchor.constraint(equalTo: self.topAnchor),
             viewUser.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             viewUser.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            viewUser.heightAnchor.constraint(equalToConstant: 92)
+            viewUser.heightAnchor.constraint(equalToConstant: 120)
         ])
         
         photoProfile.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            photoProfile.topAnchor.constraint(equalTo: self.topAnchor, constant: 23),
-            photoProfile.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            photoProfile.bottomAnchor.constraint(equalTo: viewUser.bottomAnchor, constant: -17),
+            photoProfile.leadingAnchor.constraint(equalTo: viewUser.leadingAnchor, constant: 8),
             photoProfile.heightAnchor.constraint(equalToConstant: 52),
             photoProfile.widthAnchor.constraint(equalToConstant: 52)
         ])
         
         titleName.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleName.topAnchor.constraint(equalTo: self.topAnchor, constant: 32),
+            titleName.bottomAnchor.constraint(equalTo: viewUser.bottomAnchor, constant: -47),
             titleName.leadingAnchor.constraint(equalTo: photoProfile.trailingAnchor, constant: 16)
         ])
         
@@ -130,14 +135,23 @@ class ConversationsView: BaseView {
             chatTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             chatTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
+//
+//        menuTabBar.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            menuTabBar.topAnchor.constraint(equalTo: chatTableView.bottomAnchor),
+//            menuTabBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//            menuTabBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//            menuTabBar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3),
+//            menuTabBar.heightAnchor.constraint(equalToConstant: 54)
+//        ])
         
-        menuTabBar.translatesAutoresizingMaskIntoConstraints = false
+        tabbar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            menuTabBar.topAnchor.constraint(equalTo: chatTableView.bottomAnchor),
-            menuTabBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            menuTabBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            menuTabBar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3),
-            menuTabBar.heightAnchor.constraint(equalToConstant: 54)
+            tabbar.topAnchor.constraint(equalTo: chatTableView.bottomAnchor),
+            tabbar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tabbar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tabbar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3),
+            tabbar.heightAnchor.constraint(equalToConstant: 54)
         ])
     }
 }
